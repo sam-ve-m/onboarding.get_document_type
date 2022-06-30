@@ -3,7 +3,7 @@ from typing import Union
 from etria_logger import Gladsheim
 from mnemosine import SyncCache
 
-from func.src.core.interfaces.repository.enum_document_type_cache.interface import IEnumDocumentTypeCacheRepository
+from src.core.interfaces.repository.enum_document_type_cache.interface import IEnumDocumentTypeCacheRepository
 
 
 class EnumDocumentTypeCacheRepository(IEnumDocumentTypeCacheRepository):
