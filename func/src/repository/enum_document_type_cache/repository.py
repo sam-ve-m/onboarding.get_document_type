@@ -7,7 +7,7 @@ from src.core.interfaces.repository.enum_document_type_cache.interface import IE
 
 
 class EnumDocumentTypeCacheRepository(IEnumDocumentTypeCacheRepository):
-    enum_key = "jormungandr:EnumdocumentTime"
+    enum_key = "jormungandr:onboarding:EnumDocumentType"
 
     @classmethod
     def save_enum_document_type(cls, enum_document_type: list, time: int = 3600) -> bool:
