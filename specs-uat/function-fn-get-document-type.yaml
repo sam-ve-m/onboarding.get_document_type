@@ -1,0 +1,55 @@
+include:
+- ./func/*
+kind: ArchiveUploadSpec
+name: func-8rvi
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: fn-get-document-type-312775fd-11d6-4c75-940b-95eacbc17c03
+  namespace: default
+spec:
+  deployment:
+    checksum: {}
+  environment:
+    name: env-get-document-type
+    namespace: default
+  source:
+    checksum: {}
+    type: url
+    url: archive://func-8rvi
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2022-07-12T17:19:31Z"
+
+---
+apiVersion: fission.io/v1
+kind: Function
+metadata:
+  creationTimestamp: null
+  name: fn-get-document-type
+  namespace: default
+spec:
+  InvokeStrategy:
+    ExecutionStrategy:
+      ExecutorType: newdeploy
+      MaxScale: 1
+      MinScale: 1
+      SpecializationTimeout: 120
+      TargetCPUPercent: 80
+    StrategyType: execution
+  concurrency: 500
+  environment:
+    name: env-get-document-type
+    namespace: default
+  functionTimeout: 60
+  idletimeout: 120
+  package:
+    functionName: main.get_enums
+    packageref:
+      name: fn-get-document-type-312775fd-11d6-4c75-940b-95eacbc17c03
+      namespace: default
+  requestsPerPod: 10000
+  resources: {}
