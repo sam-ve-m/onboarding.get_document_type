@@ -1,35 +1,35 @@
 include:
-- ./func/*
+- fission.py
 kind: ArchiveUploadSpec
-name: func-8rvi
+name: fission-py-ySwz
 
 ---
 apiVersion: fission.io/v1
 kind: Package
 metadata:
   creationTimestamp: null
-  name: fn-get-document-type-312775fd-11d6-4c75-940b-95eacbc17c03
+  name: onb-br-enum-doc-tp-fn-c0a4b461-2ffe-4a45-9494-91e30ec4c2c1
   namespace: default
 spec:
   deployment:
     checksum: {}
+    type: url
+    url: archive://fission-py-ySwz
   environment:
-    name: env-get-document-type
+    name: onb-br-enum-doc-tp-env
     namespace: default
   source:
     checksum: {}
-    type: url
-    url: archive://func-8rvi
 status:
-  buildstatus: pending
-  lastUpdateTimestamp: "2022-07-12T17:19:31Z"
+  buildstatus: none
+  lastUpdateTimestamp: "2023-01-05T12:46:30Z"
 
 ---
 apiVersion: fission.io/v1
 kind: Function
 metadata:
   creationTimestamp: null
-  name: fn-get-document-type
+  name: onb-br-enum-doc-tp-fn
   namespace: default
 spec:
   InvokeStrategy:
@@ -38,18 +38,24 @@ spec:
       MaxScale: 3
       MinScale: 1
       SpecializationTimeout: 120
-      TargetCPUPercent: 80
+      TargetCPUPercent: 0
+      hpaMetrics:
+      - resource:
+          name: cpu
+          target:
+            averageUtilization: 80
+            type: Utilization
+        type: Resource
     StrategyType: execution
   concurrency: 500
   environment:
-    name: env-get-document-type
+    name: onb-br-enum-doc-tp-env
     namespace: default
   functionTimeout: 60
   idletimeout: 120
   package:
-    functionName: main.get_enums
     packageref:
-      name: fn-get-document-type-312775fd-11d6-4c75-940b-95eacbc17c03
+      name: onb-br-enum-doc-tp-fn-c0a4b461-2ffe-4a45-9494-91e30ec4c2c1
       namespace: default
   requestsPerPod: 10000
   resources: {}
