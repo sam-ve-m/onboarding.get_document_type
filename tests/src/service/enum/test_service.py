@@ -1,8 +1,8 @@
 from unittest.mock import patch
 import pytest
 
-from src.service.document_type_enum.service import DocumentTypeEnumService
-from src.repository.document_type_enum.repository import DocumentTypeEnumRepository
+from func.src.service.document_type_enum.service import DocumentTypeEnumService
+from func.src.repository.document_type_enum.repository import DocumentTypeEnumRepository
 
 from tests.test_doubles.doubles import (
     enum_service_get_enums_response_ok,

@@ -1,6 +1,6 @@
-from src.repository.document_type_enum.repository import DocumentTypeEnumRepository
-from src.repository.enum_document_type_cache.repository import EnumDocumentTypeCacheRepository
-from src.repository.base_repository.oracle.repository import OracleBaseRepository
+from func.src.repository.document_type_enum.repository import DocumentTypeEnumRepository
+from func.src.repository.enum_document_type_cache.repository import EnumDocumentTypeCacheRepository
+from func.src.repository.base_repository.oracle.repository import OracleBaseRepository
 from tests.test_doubles.doubles import (
     enum_repository_get_cached_enum_dummy,
     enum_repository_get_from_cache_dummy_none,

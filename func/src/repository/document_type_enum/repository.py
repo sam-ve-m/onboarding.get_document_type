@@ -1,8 +1,8 @@
 from typing import List, Tuple
 
-from src.core.interfaces.repository.document_type_enum.interface import IDocumentTypeEnumRepository
-from src.repository.enum_document_type_cache.repository import EnumDocumentTypeCacheRepository
-from src.repository.base_repository.oracle.repository import OracleBaseRepository
+from func.src.core.interfaces.repository.document_type_enum.interface import IDocumentTypeEnumRepository
+from func.src.repository.enum_document_type_cache.repository import EnumDocumentTypeCacheRepository
+from func.src.repository.base_repository.oracle.repository import OracleBaseRepository
 
 
 class DocumentTypeEnumRepository(IDocumentTypeEnumRepository):
